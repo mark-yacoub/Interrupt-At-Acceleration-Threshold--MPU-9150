@@ -3,6 +3,8 @@ Configure Low Power Accelerometer for Motion Interrupts
 
 Microcontroller: TM4C123GH6PM by TI.
 
+Architecture: ARM Cortex-M4
+
 IDE: Code Composer Studio 6.
 
 Sensor: MPU-9150 by Invensense.
