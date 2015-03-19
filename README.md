@@ -1,9 +1,11 @@
 # Interrupt-At-Acceleration-Threshold--MPU-9150
 Configure Low Power Accelerometer for Motion Interrupts
 
-Microcontroller: TM4C123GH6PM by TI
-IDE: Code Composer Studio 6
-Sensor: MPU-9150 by Invensense
+Microcontroller: TM4C123GH6PM by TI.
+
+IDE: Code Composer Studio 6.
+
+Sensor: MPU-9150 by Invensense.
 
 This project is a sample code to set up an interrupt based on a user-programmed threshold value.
 The user sets the acceleration threshold in SI unit (m/s^2) and the amout of time the sample should stay in order to be a valid reading, usefult to avoid errors and unintended impulses.
