@@ -1,0 +1,342 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.10                     
+******************************************************************************
+>> Linked Wed Mar 18 17:10:44 2015
+
+OUTPUT FILE NAME:   <WakeOnMotion.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001181
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00001746  0003e8ba  R  X
+  SRAM                  20000000   00008000  000005ac  00007a54  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001748   00001748    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00001432   00001432    r-x .text
+  000016a0    000016a0    00000070   00000070    r-- .const
+  00001710    00001710    00000038   00000038    r-- .cinit
+20000000    20000000    000005ac   00000000    rw-
+  20000000    20000000    00000400   00000000    rw- .stack
+  20000400    20000400    00000198   00000000    rw- .bss
+  20000598    20000598    00000014   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00001432     
+                  0000026c    00000180     sensorlib.lib : mpu9150.obj (.text:MPU9150Callback)
+                  000003ec    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
+                  00000522    00000130     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000652    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000654    000000f2     sensorlib.lib : i2cm_drv.obj (.text:I2CMIntHandler)
+                  00000746    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00000748    000000ec     main.obj (.text:SetMotionInterruptAt)
+                  00000834    000000a0     sensorlib.lib : mpu9150.obj (.text:MPU9150Write)
+                  000008d4    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000970    00000098     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateIdle)
+                  00000a08    00000094     rtsv7M4_T_le_v4SPD16_eabi.lib : auto_init.obj (.text)
+                  00000a9c    00000084     sensorlib.lib : i2cm_drv.obj (.text:I2CMCommand)
+                  00000b20    00000070                   : i2cm_drv.obj (.text:I2CMReadModifyWrite8)
+                  00000b90    0000006c                   : mpu9150.obj (.text:MPU9150Init)
+                  00000bfc    00000064     driverlib.lib : interrupt.obj (.text:IntIsEnabled)
+                  00000c60    00000064     main.obj (.text:main)
+                  00000cc4    00000060     sensorlib.lib : i2cm_drv.obj (.text:I2CMReadModifyWrite8Callback)
+                  00000d24    00000060     driverlib.lib : interrupt.obj (.text:IntDisable)
+                  00000d84    00000060                   : interrupt.obj (.text:IntEnable)
+                  00000de4    00000060     sensorlib.lib : mpu9150.obj (.text:MPU9150DataRead)
+                  00000e44    0000005e                   : i2cm_drv.obj (.text:I2CMStateWritePause)
+                  00000ea2    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  00000f00    00000058     main.obj (.text:ConfigureI2C)
+                  00000f58    00000058     sensorlib.lib : i2cm_drv.obj (.text:I2CMWrite8)
+                  00000fb0    00000054     main.obj (.text:InitializeMPU9150)
+                  00001004    00000054     sensorlib.lib : mpu9150.obj (.text:MPU9150ReadModifyWrite)
+                  00001058    0000004e                   : i2cm_drv.obj (.text:I2CMStateWriteFinal)
+                  000010a6    0000004a     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.obj (.text)
+                  000010f0    00000048     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadNext)
+                  00001138    00000048     driverlib.lib : i2c.obj (.text:I2CMasterInitExpClk)
+                  00001180    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  000011c8    00000046     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateWriteNext)
+                  0000120e    00000044                   : i2cm_drv.obj (.text:I2CMStateCallback)
+                  00001252    00000002     main.obj (.text:MPU9150AppErrorHandler)
+                  00001254    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001298    00000044                                   : exit.obj (.text)
+                  000012dc    0000003e     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadFinal)
+                  0000131a    0000003e                   : i2cm_drv.obj (.text:I2CMStateReadPause)
+                  00001358    0000003c     main.obj (.text:ConfigureMPU9150Interrupt)
+                  00001394    00000038     sensorlib.lib : i2cm_drv.obj (.text:I2CMWrite8Callback)
+                  000013cc    00000038     main.obj (.text:SetUpPeripheralsInterrupts)
+                  00001404    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.obj (.text)
+                  0000143c    00000034     sensorlib.lib : i2cm_drv.obj (.text:I2CMInit)
+                  00001470    00000034     main.obj (.text:IntGPIOb)
+                  000014a4    00000030     sensorlib.lib : i2cm_drv.obj (.text:I2CMTransferResume)
+                  000014d4    0000002c     main.obj (.text:Mpu9150ModifyRegister)
+                  00001500    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  0000152a    0000002a     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadFirst)
+                  00001554    00000028     main.obj (.text:MPU9150AppI2CWait)
+                  0000157c    00000020     sensorlib.lib : i2cm_drv.obj (.text:I2CMStateReadOne)
+                  0000159c    00000018                   : i2cm_drv.obj (.text:I2CMStateReadWait)
+                  000015b4    00000018     main.obj (.text:MPU9150AppCallback)
+                  000015cc    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  000015e4    00000014                                   : _lock.obj (.text)
+                  000015f8    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  0000160a    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  0000161c    0000000e     driverlib.lib : gpio.obj (.text:GPIOIntStatus)
+                  0000162a    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00001638    0000000c     driverlib.lib : gpio.obj (.text:GPIOIntEnable)
+                  00001644    0000000c                   : interrupt.obj (.text:IntTrigger)
+                  00001650    0000000c     main.obj (.text:MPU9150I2CIntHandler)
+                  0000165c    0000000a     driverlib.lib : i2c.obj (.text:I2CMasterEnable)
+                  00001666    00000008                   : i2c.obj (.text:I2CMasterIntClear)
+                  0000166e    00000008                   : i2c.obj (.text:I2CMasterIntEnableEx)
+                  00001676    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  0000167e    00000006                   : gpio.obj (.text:GPIOIntClear)
+                  00001684    00000006     startup_ccs.obj (.text:ResetISR)
+                  0000168a    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  00001690    00000004     driverlib.lib : i2c.obj (.text:I2CMasterControl)
+                  00001694    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  00001698    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  0000169c    00000002     startup_ccs.obj (.text:NmiSR)
+
+.const     0    000016a0    00000070     
+                  000016a0    00000070     driverlib.lib : interrupt.obj (.const)
+
+.cinit     0    00001710    00000038     
+                  00001710    0000000f     (.cinit..data.load) [load image, compression = rle]
+                  0000171f    00000001     --HOLE-- [fill = 0]
+                  00001720    0000000c     (__TI_handler_table)
+                  0000172c    00000004     --HOLE-- [fill = 0]
+                  00001730    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001738    00000010     (__TI_cinit_table)
+
+.stack     0    20000000    00000400     UNINITIALIZED
+                  20000000    00000400     --HOLE--
+
+.bss       0    20000400    00000198     UNINITIALIZED
+                  20000400    00000124     main.obj (.bss:g_sI2CInst)
+                  20000524    0000006c     main.obj (.bss:g_sMPU9150Inst)
+                  20000590    00000004     (.common:g_vui8ErrorFlag)
+                  20000594    00000004     (.common:g_vui8I2CDoneFlag)
+
+.data      0    20000598    00000014     UNINITIALIZED
+                  20000598    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  200005a0    00000008                                   : exit.obj (.data)
+                  200005a8    00000004                                   : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001738 records: 2, size/record: 8, table size: 16
+	.data: load addr=00001710, load size=0000000f bytes, run addr=20000598, run size=00000014 bytes, compression=rle
+	.bss: load addr=00001730, load size=00000008 bytes, run addr=20000400, run size=00000198 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001720 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00001299   C$$EXIT
+00000f01   ConfigureI2C
+00001359   ConfigureMPU9150Interrupt
+00001501   GPIODirModeSet
+0000167f   GPIOIntClear
+00001639   GPIOIntEnable
+0000161d   GPIOIntStatus
+00000523   GPIOPadConfigSet
+000015f9   GPIOPinTypeI2CSCL
+00000a9d   I2CMCommand
+0000143d   I2CMInit
+00000655   I2CMIntHandler
+00000b21   I2CMReadModifyWrite8
+000014a5   I2CMTransferResume
+00000f59   I2CMWrite8
+00001691   I2CMasterControl
+00001695   I2CMasterDataGet
+00001699   I2CMasterDataPut
+0000165d   I2CMasterEnable
+00001139   I2CMasterInitExpClk
+00001667   I2CMasterIntClear
+0000166f   I2CMasterIntEnableEx
+00001677   I2CMasterSlaveAddrSet
+00000fb1   InitializeMPU9150
+00000d25   IntDisable
+00000d85   IntEnable
+00001471   IntGPIOb
+00000bfd   IntIsEnabled
+00001645   IntTrigger
+000015b5   MPU9150AppCallback
+00001253   MPU9150AppErrorHandler
+00001555   MPU9150AppI2CWait
+00000de5   MPU9150DataRead
+00001651   MPU9150I2CIntHandler
+00000b91   MPU9150Init
+00001005   MPU9150ReadModifyWrite
+00000835   MPU9150Write
+000014d5   Mpu9150ModifyRegister
+00001685   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00000749   SetMotionInterruptAt
+000013cd   SetUpPeripheralsInterrupts
+20000400   __STACK_END
+00000400   __STACK_SIZE
+20000400   __STACK_TOP
+00001738   __TI_CINIT_Base
+00001748   __TI_CINIT_Limit
+00001720   __TI_Handler_Table_Base
+0000172c   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00000a09   __TI_auto_init
+200005a0   __TI_cleanup_ptr
+0000162b   __TI_decompress_none
+0000168b   __TI_decompress_rle24
+200005a4   __TI_dtors_ptr
+00001710   __TI_static_base__
+0000160b   __TI_zero_init
+000010a7   __aeabi_d2f
+000003ed   __aeabi_ddiv
+00001405   __aeabi_f2d
+000008d5   __aeabi_memcpy
+000008d5   __aeabi_memcpy4
+000008d5   __aeabi_memcpy8
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+000015cd   _args_main
+00001181   _c_int00
+20000598   _lock
+000015f3   _nop
+000015eb   _register_lock
+000015e5   _register_unlock
+2000059c   _unlock
+0000129d   abort
+ffffffff   binit
+00001255   copy_in
+000012a5   exit
+00000000   g_pfnVectors
+20000400   g_sI2CInst
+20000524   g_sMPU9150Inst
+20000590   g_vui8ErrorFlag
+20000594   g_vui8I2CDoneFlag
+00000c61   main
+200005a8   main_func_sp
+000008d5   memcpy
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   g_pfnVectors
+00000001   __TI_args_main
+000003ed   __aeabi_ddiv
+00000400   __STACK_SIZE
+00000523   GPIOPadConfigSet
+00000655   I2CMIntHandler
+00000749   SetMotionInterruptAt
+00000835   MPU9150Write
+000008d5   __aeabi_memcpy
+000008d5   __aeabi_memcpy4
+000008d5   __aeabi_memcpy8
+000008d5   memcpy
+00000a09   __TI_auto_init
+00000a9d   I2CMCommand
+00000b21   I2CMReadModifyWrite8
+00000b91   MPU9150Init
+00000bfd   IntIsEnabled
+00000c61   main
+00000d25   IntDisable
+00000d85   IntEnable
+00000de5   MPU9150DataRead
+00000f01   ConfigureI2C
+00000f59   I2CMWrite8
+00000fb1   InitializeMPU9150
+00001005   MPU9150ReadModifyWrite
+000010a7   __aeabi_d2f
+00001139   I2CMasterInitExpClk
+00001181   _c_int00
+00001253   MPU9150AppErrorHandler
+00001255   copy_in
+00001299   C$$EXIT
+0000129d   abort
+000012a5   exit
+00001359   ConfigureMPU9150Interrupt
+000013cd   SetUpPeripheralsInterrupts
+00001405   __aeabi_f2d
+0000143d   I2CMInit
+00001471   IntGPIOb
+000014a5   I2CMTransferResume
+000014d5   Mpu9150ModifyRegister
+00001501   GPIODirModeSet
+00001555   MPU9150AppI2CWait
+000015b5   MPU9150AppCallback
+000015cd   _args_main
+000015e5   _register_unlock
+000015eb   _register_lock
+000015f3   _nop
+000015f9   GPIOPinTypeI2CSCL
+0000160b   __TI_zero_init
+0000161d   GPIOIntStatus
+0000162b   __TI_decompress_none
+00001639   GPIOIntEnable
+00001645   IntTrigger
+00001651   MPU9150I2CIntHandler
+0000165d   I2CMasterEnable
+00001667   I2CMasterIntClear
+0000166f   I2CMasterIntEnableEx
+00001677   I2CMasterSlaveAddrSet
+0000167f   GPIOIntClear
+00001685   ResetISR
+0000168b   __TI_decompress_rle24
+00001691   I2CMasterControl
+00001695   I2CMasterDataGet
+00001699   I2CMasterDataPut
+00001710   __TI_static_base__
+00001720   __TI_Handler_Table_Base
+0000172c   __TI_Handler_Table_Limit
+00001738   __TI_CINIT_Base
+00001748   __TI_CINIT_Limit
+20000000   __stack
+20000400   __STACK_END
+20000400   __STACK_TOP
+20000400   g_sI2CInst
+20000524   g_sMPU9150Inst
+20000590   g_vui8ErrorFlag
+20000594   g_vui8I2CDoneFlag
+20000598   _lock
+2000059c   _unlock
+200005a0   __TI_cleanup_ptr
+200005a4   __TI_dtors_ptr
+200005a8   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[86 symbols]
